@@ -116,25 +116,25 @@
 //  console.log(applyDiscount(originalPrice, discountPercent));
 //  console.log(applyDiscount(400, .50));
 
-//  var tempertureOutside = 60;
-//
-// // if/else example
-// if ( tempertureOutside > 70) {
-//     console.log("Bring some shades");
-// } else if (tempertureOutside < 70 &&  tempertureOutside >= 50);{
-//     console.log("Bring a sweater");
-// }  (tempertureOutside < 50)
-//     console.log("Stay home");
+ var outsidetemp = 40;
 
-
-var pass = "theSecretPassword";
-
-var userGuess = prompt("guess the pass");
-
-// if the user guesses correctly, alert "you are a winner"
-// if the user guesses incorrectly, alert "try again next time"
-
-if( userGuess === pass){
-    console.log(alert("you are a winner"));
-} else { console.log(alert("try again next time"));
+// if/else example
+if ( outsidetemp >= 70) {
+    console.log("Bring some shades");
+} else if (outsidetemp < 70 &&  outsidetemp >= 50){
+    console.log("Bring a sweater");
+}  else if (outsidetemp < 50) {
+    console.log("Stay home");
 }
+
+// var pass = "theSecretPassword";
+//
+// var userGuess = prompt("guess the pass");
+//
+// // if the user guesses correctly, alert "you are a winner"
+// // if the user guesses incorrectly, alert "try again next time"
+//
+// if( userGuess === pass){
+//     console.log(alert("you are a winner"));
+// } else { console.log(alert("try again next time"));
+// }
