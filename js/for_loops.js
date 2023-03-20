@@ -19,9 +19,11 @@ function getRandomInt(min, max) {
                  console.log(i + m + " is odd")
              }
          }
-         for (var x =1; x <= 10; x++){
-             var double = x * 11
-             console.log(double)
+         for (var x = 0; x <= 10; x++){
+             var str = "";
+             for(var j = 0; j < x; j++)
+                 str= str + x;
+             console.log(str)
          }
 
 
