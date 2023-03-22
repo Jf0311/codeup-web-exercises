@@ -156,6 +156,14 @@
      *      ---
      *      ...
      */
+    books.forEach(function (book, i) {
+        console.log('Book # ' + (i +1))
+        console.log('Title: ' + book.title)
+        var firstName = book.author.firstName
+        var lastName = book.author.lastName
+        console.log('Author: ' + firstName + ' '  +lastName)
+        console.log('---')
+    })
 
     /**
      * Bonus:
@@ -167,5 +175,11 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+
+
+
 
 })();
