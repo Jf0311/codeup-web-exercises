@@ -2,3 +2,43 @@
     color: purple;
     text-decoration: underline;
 }
+
+h1 {
+    text-align: center;
+}
+
+h2{
+    color: cornflowerblue;
+}
+html {
+    background-color:darkolivegreen;
+    background-image:url("https://t3.ftcdn.net/jpg/05/12/30/98/360_F_512309818_VlLXVDiOeVANyoXhccFANLv9rymlAl0f.jpg")
+}
+
+ul {
+    list-style: upper-roman;
+}
+html{
+    font-family: 'Audiowide', cursive;
+}
+
+table{
+    padding: auto;
+    text-align: center;
+    font-size: 2rem;
+    color: darkcyan;
+}
+
+a:link{
+    color: indianred;
+}
+a:visited{
+    color: blueviolet;
+}
+
+a:active {
+    color:gold;
+}
+a:hover{
+    color: darkgoldenrod;
+}
