@@ -10,7 +10,7 @@ h1 {
 h2{
     color: cornflowerblue;
 }
-html {
+body {
     background-color:darkolivegreen;
     background-image:url("https://t3.ftcdn.net/jpg/05/12/30/98/360_F_512309818_VlLXVDiOeVANyoXhccFANLv9rymlAl0f.jpg")
 }
@@ -18,7 +18,7 @@ html {
 ul {
     list-style: upper-roman;
 }
-html{
+body{
     font-family: 'Audiowide', cursive;
 }
 
