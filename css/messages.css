@@ -1,0 +1,62 @@
+
+
+:root {
+    --info-bg-color: rgb(205,222,255);
+    --success-bg-color: rgb(207,243,218);
+    --warning-bg-color: rgb(252,251,201);
+    --error-bg-color: rgb(250,211,215);
+    --info-text-color: rgb(63,56,153);
+    --success-text-color: rgb(56,137,90);
+    --warning-text-color: rgb(163,148,54);
+    --error-text-color: rgb(145,46,70);
+}
+
+body, html {
+    height: 75%;
+    width: 75%;
+    padding: 2px;
+    margin: 2px;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message-info{
+    background-color: var(--info-bg-color);
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--info-text-color);
+    margin: 5px 0px 5px 0px;
+}
+
+.message-success{
+    background-color: var(--success-bg-color);
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--success-text-color);
+    margin: 5px 0px 5px 0px;
+}
+
+.message-warning{
+    background-color: var(--warning-bg-color);
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--warning-text-color);
+    margin: 5px 0px 5px 0px;
+}
+.message-error{
+    background-color: var(--error-bg-color);
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: rgb(145,46,70);
+    margin: var(--error-text-color);
+}
