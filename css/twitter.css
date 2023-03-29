@@ -114,7 +114,7 @@ float: right;
 .timeline {
     margin: 0 .5em;
     width: calc(50% - 1em);
-    float: left;
+    float:left;
 }
 
 .who-to-follow {
