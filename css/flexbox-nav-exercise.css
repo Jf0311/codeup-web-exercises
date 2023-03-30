@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: lightgray;
+    height: 50px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav a:hover {
+    background: blue;
+}
+
+.Logo-class{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    padding: .2em;
+    font-family: font-family: 'Audiowide', cursive;
+    font-family: 'Montserrat', sans-serif;;
+
+}
