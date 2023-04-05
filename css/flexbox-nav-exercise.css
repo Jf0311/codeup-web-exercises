@@ -6,33 +6,38 @@ body {
 }
 nav {
     background: lightgray;
-    height: 50px;
+
 }
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+
 }
 nav a {
     text-decoration: none;
     color: black;
-    font-family: Verdana;
-    display: inline-block; /* inline-block to increase clickable area beyond the text */
-    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+    font-family: 'Montserrat', sans-serif;;
+    display: inline-block;
+
 }
 nav a:hover {
-    background: blue;
+   color: blue;
 }
 
 .Logo-class{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 50%;
     align-items: center;
+    flex-direction: column;
+    width: 50%;
     padding: .2em;
-    font-family: font-family: 'Audiowide', cursive;
-    font-family: 'Montserrat', sans-serif;;
+    margin: 0;
+    font-size: 3em;
+
 
 }
+
