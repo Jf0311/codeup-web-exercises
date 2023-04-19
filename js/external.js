@@ -67,8 +67,11 @@
 
 //Write a function that accepts and multiplies 3 numbers and alerts the browser with the result
 
-function multiplyThreeNumbers(x,y, z){
-    var a = x * y * z ;
-    alert("My result is " + a);
-}
-console.log(multiplyThreeNumbers(2, 3, 4));
+// function multiplyThreeNumbers(x,y, z){
+//     var a = x * y * z ;
+//     alert("My result is " + a);
+// }
+// console.log(multiplyThreeNumbers(2, 3, 4));
+
+var array = ['john','paul','george','ringo','santana'];
+console.log(array[2])
