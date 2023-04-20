@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/Konami-style.css">
+</head>
+<body>
+<h1> Konami Code</h1>
+<script src="/path/to/howler.js"></script>
+<script>
+    var sound = new Howl({
+        src: ['sound.webm', 'sound.mp3']
+    });
+</script>
+<script>
+    "use strict";
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+    });
+    var allowedKeys = {
+        // a key map of allowed keys
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down',
+        65: 'a',
+        66: 'b',
+        13: 'enter'
+    };
+    // the Konami Code sequence
+    var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
+
+    // a variable to remember the 'position' the user has reached so far.
+    var konamiCodePosition = 0;
+    document.addEventListener('keydown', function (e) {
+        var key = allowedKeys[e.keyCode];
+        var requiredKey = konamiCode[konamiCodePosition];
+        if (key == requiredKey) {
+            konamiCodePosition++;
+
+            // a variable to remember the 'position' the user has reached so far.
+            if (konamiCodePosition == konamiCode.length) {
+                activateCheats();
+                konamiCodePosition = 0;
+            }
+        } else {
+            konamiCodePosition = 0;
+        }
+    });
+
+    function activateCheats() {
+        // document.body.style.backgroundColor = "#f3f3f3"
+        document.body.style.backgroundImage =  "url('image/artofxmen.jpg ')";
+
+
+        let audio = new Audio('Sounds/X-Men - 1994.mp3');
+        audio.play();
+
+        alert("You got 30 lives");
+    }
+
+
+    // var allowedKeys = [], konami = "38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13";
+    //
+    // $(document).on("keydown",function(e) {
+    //
+    //     allowedKeys.push(e.keyCode);
+    //
+    //     if (allowedKeys.toString().indexOf(konami) >= 0) {
+    //
+    //         $(document).unbind("keydown", arguments.callee);
+    //
+    //         $("body").addclass("images/bmwkomora.jpg");
+    //
+    //         $("audio")[0].play();
+    //         alert("you have 30 lives!");
+    //
+    //         $("body").addClass("konami");
+    //     }
+    // });
+
+
+</script>
+</body>
+</html>
