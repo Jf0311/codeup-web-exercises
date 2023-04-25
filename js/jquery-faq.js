@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("li").click(function(){
-        $('li:parent').toggleClass('blue-text');
+        $('li').toggleClass('firstLI');
     });
 });
 
