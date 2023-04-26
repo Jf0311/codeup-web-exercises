@@ -8,72 +8,88 @@
     <title>Title</title>
 </head>
 <body>
-<div id="posts" >
+<div id="posts">
 </div>
 <button>Press</button>
 
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 
 <script>
 
 
+    "use strict";
+    // $.get('data/blog.json').done(function(data){
+    //         console.log(data);
+    //     data.forEach(function (object){
+    //         $('#posts').append(`<body><h1>${object.title}</h1><p>${object.content}</p><p>${object.categories}</p><p>${object.date}</p></body>`)
+    // })});
 
-        "use strict";
-        $.get('data/blog.json').done(function(data){
-                console.log(data);
-            data.forEach(function (object){
-                $('#posts').append(`<body><h1>${object.title}</h1><p>${object.content}</p><p>${object.categories}</p><p>${object.date}</p></body>`)
-        })});
+    $.get('data/blog.json').done((data) => { //this grabs the file
+        console.log(data);  //shows the file
+        let markUp = "";  //make a variable to store
+        data.forEach((el) => {   // goes through each of the data
+            // markUp += ` <h1>${el.title}</h1> <p>${el.content}</p><p>${el.categories}</p><p>${el.date}</p>`
+            markUp += `
+            <div class="card text-center">
+              <div class="card-header">
+               ${el.categories}
+              </div>
 
-        // $.get('data/blog.json').done(function(data) {
-        //     console.log(data);
-        //     let markUp = ""
-        //     data.forEach((el) =>{
-        //         markUp += ` <h1>${</h1>`
-        //     })
-        // })
-
-
-
-
-
-
-
+              <div class="card-body">
+                <h5 class="card-title background-red">${el.title}</h5>
 
 
-        // $.post('data/blog.json') { }, function(result){
-        //     $("#posts").append(result);
-        // });
 
-        // $(document).ready(function(){
-        //     $("button").click(function(){
-        //         $.post("data/blog.json",
-        //             {
-        //                 "title": "Donald Duck",
-        //                 "content" : "Duckburg"
-        //             },
-        //             function(data,status) {
-        //             console.log(data)
-        //                 $('#posts').html("<p>HI </p>", );
-        //             });
-        //     });
-        // });
+                <p class="card-text">${el.content}.</p>
+              </div>
 
-        // $(document).ready(function(){
-        //     $("button").click(function(){
-        //         $.post('data/blog.json',
-        //             {
-        //                 name: "Donald Duck",
-        //                 city: "Duckburg"
-        //             },
-        //             function(data,status){
-        //             console.log(data,status)
-        //                 alert("Data: " + data + "\nStatus: " + status);
-        //             });
-        //     });
-        // });
+
+
+              <div class="card-footer text-muted">
+                ${el.date}
+              </div>
+            </div>`
+            $('#posts').html(markUp)
+        })
+        console.log(markUp)
+        // $('#posts').html(markUp)
+    })
+
+
+    // $.post('data/blog.json') { }, function(result){
+    //     $("#posts").append(result);
+    // });
+
+    // $(document).ready(function(){
+    //     $("button").click(function(){
+    //         $.post("data/blog.json",
+    //             {
+    //                 "title": "Donald Duck",
+    //                 "content" : "Duckburg"
+    //             },
+    //             function(data,status) {
+    //             console.log(data)
+    //                 $('#posts').html("<p>HI </p>", );
+    //             });
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $("button").click(function(){
+    //         $.post('data/blog.json',
+    //             {
+    //                 name: "Donald Duck",
+    //                 city: "Duckburg"
+    //             },
+    //             function(data,status){
+    //             console.log(data,status)
+    //                 alert("Data: " + data + "\nStatus: " + status);
+    //             });
+    //     });
+    // });
 
 </script>
 </body>
