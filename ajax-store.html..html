@@ -57,14 +57,20 @@
       })
       })
 
+
     //  above Shows the  object in the data
 
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+      // found this on google , https://www.tutorialrepublic.com/faq/how-to-refresh-a-page-with-jquery.php#:~:text=Answer%3A%20Use%20the%20JavaScript%20location,reload()%20Method&text=reload()%20method%20to%20refresh,be%20reloaded%20from%20the%20server. Tell me how to refresh a button.
 
-
+    $(document).ready(function(){
+      $("button").click(function(){
+        location.reload(true);
+      });
+    });
 
   })();
 </script>
