@@ -24,7 +24,7 @@
     style: 'mapbox://styles/mapbox/streets-v12',
     center: [-73.84043,
       40.66273],
-    zoom: 4,
+    zoom: 3,
     projection: 'globe' // starting projection
   });
 
@@ -38,8 +38,8 @@
             32.62141])
           .addTo(map);
   const marker3 = new mapboxgl.Marker()
-          .setLngLat([-73.24723,
-            40.722255])
+          .setLngLat([-77.1957,
+            42.12074])
           .addTo(map);
 
   // This is for the Popups
@@ -54,9 +54,9 @@
           .setHTML('<h1>DA BEST BBQ!</h1>')
           .addTo(map);
   const popup3 = new mapboxgl.Popup({ closeOnClick: false })
-          .setLngLat([-73.24723,
-            40.722255])
-          .setHTML('<h1>DA BEST PIZZA!</h1>')
+          .setLngLat([-77.1957,
+            42.12074])
+          .setHTML('<h1>DA BEST FISH!</h1>')
           .addTo(map);
 
 </script>
