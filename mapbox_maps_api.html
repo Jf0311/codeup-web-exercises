@@ -13,6 +13,8 @@
 </head>
 <body>
 <div id="map"></div>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <script>
   // TO MAKE THE MAP APPEAR YOU MUST
   // ADD YOUR ACCESS TOKEN FROM
@@ -27,124 +29,148 @@
     zoom: 3,
     projection: 'globe' // starting projection
   });
-  map.on('load', () => {
-    map.addSource('places', {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': [
-          {
-            'type': 'Feature',
-            'properties': {
-              'description':
-                      '<strong>New Park Pizza</strong><p>Want a good slice? Head down Howard Beach, and make sure to  stop by New Park Pizza. Grab a slice and stay a while. Remember Cash only!</p>'
-            },
-            'geometry': {
-              'type': 'Point',
-              'coordinates': [-73.84043, 40.66273]
-            }
-          },
-          {
-            'type': 'Feature',
-            'properties': {
-              'description':
-                      '<strong>Goldee\'s BBQ </strong><p> Best BBQ in Texas hands down.  </p>'
-            },
-            'geometry': {
-              'type': 'Point',
-              'coordinates': [-97.23399, 32.62141]
-            }
-          },
-          {
-            'type': 'Feature',
-            'properties': {
-              'description':
-                      '<strong>Fran Landing</strong><p> Merica Food. </p>'
-            },
-            'geometry': {
-              'type': 'Point',
-              'coordinates': [-77.1957, 42.12074]
-            }
-          }
-        ]
-      }
-    });
-// Add a layer showing the places.
-    map.addLayer({
-      'id': 'places',
-      'type': 'circle',
-      'source': 'places',
-      'paint': {
-        'circle-color': '#4264fb',
-        'circle-radius': 6,
-        'circle-stroke-width': 2,
-        'circle-stroke-color': '#ffffff'
-      }
-    });
+  // Add zoom and rotation controls to the map.
+  map.addControl(new mapboxgl.NavigationControl());
+//   map.on('load', () => {
+//     map.addSource('places', {
+//       'type': 'geojson',
+//       'data': {
+//         'type': 'FeatureCollection',
+//         'features': [
+//           {
+//             'type': 'Feature',
+//             'properties': {
+//               'description':
+//                       '<strong>New Park Pizza</strong><p>Want a good slice? Head down Howard Beach, and make sure to  stop by New Park Pizza. Grab a slice and stay a while. Remember Cash only!</p>'
+//             },
+//             'geometry': {
+//               'type': 'Point',
+//               'coordinates': [-73.84043, 40.66273]
+//             }
+//           },
+//           {
+//             'type': 'Feature',
+//             'properties': {
+//               'description':
+//                       '<strong>Goldee\'s BBQ </strong><p> Best BBQ in Texas hands down.  </p>'
+//             },
+//             'geometry': {
+//               'type': 'Point',
+//               'coordinates': [-97.23399, 32.62141]
+//             }
+//           },
+//           {
+//             'type': 'Feature',
+//             'properties': {
+//               'description':
+//                       '<strong>Fran Landing</strong><p> Merica Food. </p>'
+//             },
+//             'geometry': {
+//               'type': 'Point',
+//               'coordinates': [-77.1957, 42.12074]
+//             }
+//           }
+//         ]
+//       }
+//     });
+// // Add a layer showing the places.
+//     map.addLayer({
+//       'id': 'places',
+//       'type': 'circle',
+//       'source': 'places',
+//       'paint': {
+//         'circle-color': '#4264fb',
+//         'circle-radius': 6,
+//         'circle-stroke-width': 2,
+//         'circle-stroke-color': '#ffffff'
+//       }
+//     });
+//
+// // When a click event occurs on a feature in the places layer, open a popup at the
+// // location of the feature, with description HTML from its properties.
+//     map.on('click', 'places', (e) => {
+// // Copy coordinates array.
+//       const coordinates = e.features[0].geometry.coordinates.slice();
+//       const description = e.features[0].properties.description;
+//
+// // Ensure that if the map is zoomed out such that multiple
+// // copies of the feature are visible, the popup appears
+// // over the copy being pointed to.
+//       while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+//         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+//       }
+//
+//       new mapboxgl.Popup()
+//               .setLngLat(coordinates)
+//               .setHTML(description)
+//               .addTo(map);
+//     });
+//
+// // Change the cursor to a pointer when the mouse is over the places layer.
+//     map.on('mouseenter', 'places', () => {
+//       map.getCanvas().style.cursor = 'pointer';
+//     });
+//
+// // Change it back to a pointer when it leaves.
+//     map.on('mouseleave', 'places', () => {
+//       map.getCanvas().style.cursor = '';
+//     });
+//   });
+  //Geocoder section
+  // Add the control to the map. T
+  map.addControl(
+          new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+          })
+  );
 
-// When a click event occurs on a feature in the places layer, open a popup at the
-// location of the feature, with description HTML from its properties.
-    map.on('click', 'places', (e) => {
-// Copy coordinates array.
-      const coordinates = e.features[0].geometry.coordinates.slice();
-      const description = e.features[0].properties.description;
 
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-      }
 
-      new mapboxgl.Popup()
-              .setLngLat(coordinates)
-              .setHTML(description)
-              .addTo(map);
-    });
+  let restaurantILike = [
+    {
+      restaurantName: "New Park Pizza",
+      type: "Pizza spot",
+      location: [-73.84043, 40.66273],
+      description: "Want a good slice? Head down Howard Beach, and make sure to  stop by New Park Pizza. Grab a slice and stay a while. Remember Cash only!"
+    },
+    {
+      restaurantName: "Goldee\'s BBQ",
+      type: "BBQ",
+      location: [-97.23399, 32.62141],
+      description:"Best BBQ in Texas. Briskets , Pulled Pork , Beef Ribs, will have you going back for seconds.."
+    },
+    {
+      restaurantName: "Fran Landing ",
+      type: "American Food",
+      location: [-77.1957, 42.12074],
+      description: "Typical American dishes , and Diner style food. Huge portions and tasty food."
 
-// Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', 'places', () => {
-      map.getCanvas().style.cursor = 'pointer';
-    });
+    }]
+//syntax      array.forEach(function(currentValue, index, arr), thisValue)
 
-// Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'places', () => {
-      map.getCanvas().style.cursor = '';
-    });
-  });
-  // const nav = new mapboxgl.NavigationControl();
-  // map.addControl(nav, 'top-left');
-  //
-  // // Marker for three different restaurant
-  // const marker = new mapboxgl.Marker()
-  //         .setLngLat([-73.84043,
-  //           40.66273])
-  //         .addTo(map);
-  // const marker2 = new mapboxgl.Marker()
-  //         .setLngLat([-97.23399,
-  //           32.62141])
-  //         .addTo(map);
-  // const marker3 = new mapboxgl.Marker()
-  //         .setLngLat([-77.1957,
-  //           42.12074])
-  //         .addTo(map);
+  restaurantILike.forEach(restaurant => {
+    console.log(restaurant)
+  })
 
-  // This is for the Popups
-  // const popup = new mapboxgl.Popup({ closeOnClick: false })
-  //         .setLngLat([-73.84043,
-  //           40.66273])
-  //         .setHTML('<h1>DA BEST PIZZA!</h1>')
-  //         .addTo(map);
-  // const popup2 = new mapboxgl.Popup({ closeOnClick: false })
-  //         .setLngLat([-97.23399,
-  //           32.62141])
-  //         .setHTML('<h1>DA BEST BBQ!</h1>')
-  //         .addTo(map);
-  // const popup3 = new mapboxgl.Popup({ closeOnClick: false })
-  //         .setLngLat([-77.1957,
-  //           42.12074])
-  //         .setHTML('<h1>DA BEST FISH!</h1>')
-  //         .addTo(map);
+  restaurantILike.forEach(function (restaurant){
+    var  name = restaurant.restaurantName;
+    var type = restaurant.type;
+    var location = restaurant.location;
+    var description = restaurant.description;
+    console.log(`${name} serves ${type}  We have to say,  ${description}`);
+    var restaurantPopup = new mapboxgl.Popup()
+            .setHTML(` <h1>${name}</h1> <br>  ${description}`)
+            .setLngLat(restaurant.location)
+            .addTo(map)
+
+    var marker = new mapboxgl.Marker()
+            .setLngLat(restaurant.location)
+            .setPopup(restaurantPopup)
+            .addTo(map);
+
+
+  })
 
 </script>
 
