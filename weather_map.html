@@ -15,70 +15,69 @@
         </div>
     </nav>
 </div>
+<h2 class="title-above"> Five Day Forecast</h2>
 <br>
 <br>
 <br>
 
 <!-- // Section for cards-->
 
-<style>
-    .weather-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        width: 200px;
-    }
-</style>
-
 <div class="container-fluid ">
-    <div class="row">
+    <div class="row d-flex justify-content-evenly">
         <div class="col-2">
             <div class="weather-card">
-                <h2>Day 1</h2>
-                <p class="Max temperature">Max: <span id="day1-max"></span></p>
-                <p class="Min temperature">Min: <span id="day1-min"></span></p>
-                <p class="Average temperature">Average: <span id="day1-avg"></span></p>
-                <p class="conditions">Conditions: <span id="day1-conditions"></span></p>
+                <h2 id="day-1">Day 1</h2>
+                <div class ="logo"></div>
+                <p class="max temperature">Max: <span id="day1-max"></span></p>
+                <p class="min temperature">Min: <span id="day1-min"></span></p>
+                <p class="average temperature">Humidity: <span id="day1-humidity"></span></p>
+                <p class="conditions">Wind Speed: <span id="day1-conditions"></span></p>
             </div>
         </div>
         <div class="col-2">
             <div class="weather-card">
-                <h2>Day 2</h2>
-                <p class="Max temperature">Max: <span id="day2-max"></span></p>
-                <p class="Min temperature">Min: <span id="day2-min"></span></p>
-                <p class="Average temperature">Average: <span id="day2-avg"></span></p>
-                <p class="conditions">Conditions: <span id="day2-conditions"></span></p>
+                <h2 id="day-2" >Day 2</h2>
+                <div class ="logo"></div>
+                <p class="max temperature">Max: <span id="day2-max"></span></p>
+                <p class="min temperature">Min: <span id="day2-min"></span></p>
+                <p class="average temperature">Humidity: <span id="day2-humidity"></span></p>
+                <p class="conditions">Wind Speed: <span id="day2-conditions"></span></p>
             </div>
         </div>
         <div class="col-2">
             <div class="weather-card">
-                <h2>Day 3</h2>
-                <p class="Max temperature">Max: <span id="day3-max"></span></p>
-                <p class="Min temperature">Min: <span id="day3-min"></span></p>
-                <p class="Average temperature">Average: <span id="day3-avg"></span></p>
-                <p class="conditions">Conditions: <span id="day3-conditions"></span></p>
+                <h2 id="day-3">Day 3</h2>
+                <div class ="logo"></div>
+                <p class="max temperature">Max: <span id="day3-max"></span></p>
+                <p class="min temperature">Min: <span id="day3-min"></span></p>
+                <p class="average temperature">Humidity: <span id="day3-humidity"></span></p>
+                <p class="conditions">Wind Speed: <span id="day3-conditions"></span></p>
             </div>
         </div>
         <div class="col-2">
             <div class="weather-card">
-                <h2>Day 4</h2>
-                <p class="Max temperature">Max: <span id="day4-max"></span></p>
-                <p class="Min temperature">Min: <span id="day4-min"></span></p>
-                <p class="Average temperature">Average: <span id="day4-avg"></span></p>
-                <p class="conditions">Conditions: <span id="day4-conditions"></span></p>
+                <h2 id="day-4">Day 4</h2>
+                <div class ="logo"></div>
+                <p class="max temperature">Max: <span id="day4-max"></span></p>
+                <p class="min temperature">Min: <span id="day4-min"></span></p>
+                <p class="Average temperature">Humidity: <span id="day4-humidity"></span></p>
+                <p class="conditions">Wind Speed: <span id="day4-conditions"></span></p>
             </div>
         </div>
         <div class="col-2">
             <div class="weather-card">
-                <h2>Day 5</h2>
-                <p class="Max temperature">Max: <span id="day5-max"></span></p>
-                <p class="Min temperature">Min: <span id="day5-min"></span></p>
-                <p class="Average temperature">Average: <span id="day5-avg"></span></p>
-                <p class="conditions">Conditions: <span id="day5-conditions"></span></p>
+                <h2 id="day-5">Day 5</h2>
+                <div class ="logo"></div>
+                <p class="max temperature">Max: <span id="day5-max"></span></p>
+                <p class="min temperature">Min: <span id="day5-min"></span></p>
+                <p class="Average temperature">Humidity: <span id="day5-humidity"></span></p>
+                <p class="conditions">Wind Speed: <span id="day5-conditions"></span></p>
             </div>
         </div>
+    </div>
+
         <div id='map'></div>
+        </div>
             <script type="text/javascript" src="js/jquery-3.6.4.js"></script>
             <script src="bootstrap/js/bootstrap.js"></script>
             <script src="js/keys.js"></script>
