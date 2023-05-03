@@ -184,7 +184,7 @@ $(document).ready(function () {
     }).done(function (weatherForecast) {
         console.log(weatherForecast);
 
-        let picture = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[0].weather[0].icon}.png">`
+        // let picture = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[0].weather[0].icon}.png">`
         //     console.log(weatherForecast.list[0].weather[0].icon)
         //     let pictureTwo = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[1].weather[0].icon}.png">`
         //     let pictureThree = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[2].weather[0].icon}.png">`
@@ -224,10 +224,19 @@ $(document).ready(function () {
         document.querySelector("#day-5").innerHTML = weatherForecast.list[32].dt_txt;
 
         // update the weather icons for the next 5 days
+        // Update the weather icons for the next 5 days
+        let icons = [                weatherForecast.list[0].weather[0].icon,
+            weatherForecast.list[8].weather[0].icon,
+            weatherForecast.list[16].weather[0].icon,
+            weatherForecast.list[24].weather[0].icon,
+            weatherForecast.list[32].weather[0].icon
+        ];
 
-        $('.logo').html(picture);
-        console.log(picture)
-    });
+        $('.logo').each(function (index) {
+                let picture = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[index].weather[0].icon}.png">`
+            $(this).html(picture)
+    }
+    );
 
     // $('.logo').html(picture);
     // console.log(picture)
@@ -291,7 +300,13 @@ $(document).ready(function () {
                 document.querySelector("#day-4").innerHTML = weatherForecast.list[24].dt_txt;
                 document.querySelector("#day-5").innerHTML = weatherForecast.list[32].dt_txt;
 
+                $('.logo').each(function (index) {
+                    let picture = `<img src= "https://openweathermap.org/img/w/${weatherForecast.list[index].weather[0].icon}.png">`
+                    $(this).html(picture)
+                })
+
+
             });
         });
     });
-});
+})});
