@@ -21,7 +21,9 @@ function geocode(search, token) {
             return res.json();
             // to get all the data from the request, comment out the following three lines...
         }).then(function(data) {
+            console.log(data)
             return data.features[0].center;
+
         });
 }
 

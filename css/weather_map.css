@@ -11,7 +11,7 @@ body{
     font-size: 100px;
     font-family: "Brush Script MT";
     margin-top: 5px;
-    color: #0fb784;
+    color: #6ea8fe;
 
 }
 
@@ -28,6 +28,13 @@ body{
 
 
 }
+h4{
+    font-family: fantasy;
+}
+
+p{
+    font-family: fantasy;
+}
 
 #map{
     display: flex;
@@ -37,6 +44,4 @@ body{
 
 }
 
-p{
-    font-family: fantasy;
-}
+
