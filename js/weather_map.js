@@ -7,7 +7,10 @@
 // Wait for DOM to load before running script
 $(document).ready(function () {
 
-
+    let button = document.getElementById("searchButton");
+    button.addEventListener("click",function (){
+        console.log("button clicked")
+    })
 
     // Create a map and add it to the page
     mapboxgl.accessToken = MAPBOX_KEY;
@@ -17,6 +20,13 @@ $(document).ready(function () {
         center: [-77.333, 42.2667], // "Steuben, US
         zoom: 9
     });
+    // Add the control to the map.
+    const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     // Add zoom and rotation controls to the map
     map.addControl(new mapboxgl.NavigationControl());
