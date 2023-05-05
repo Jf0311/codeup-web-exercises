@@ -5,10 +5,7 @@
 // Wait for DOM to load before running script
     $(document).ready(function () {
 
-        // let button = document.getElementById("searchButton");
-        // button.addEventListener("click",function (){
-        //     console.log("button clicked")
-        // })
+
         let marker;
 
         $("#searchButton").on("click", () => {
@@ -48,21 +45,7 @@
 
 
         marker.setDraggable(true);
-        // map.on('click', function (event) {
-        //     console.log(event.lngLat)
-        //     const {lng, lat} = event.lngLat
-        //     console.log(lng, lat)
-        //     // Remove previous marker if there is one
-        //     if (marker) {
-        //         marker.remove();
-        //     }
-        //     marker = new mapboxgl.Marker()
-        //         .setLngLat([lng, lat])
-        //         .addTo(map);
-        //     map.setCenter([lng, lat]);
-        //     map.setZoom(4);
-        //
-        // })
+
 
 
         marker.on("dragend", (e) => {
@@ -134,15 +117,10 @@
                 }
             );
 
-            // $('.logo').html(picture);
-            // console.log(picture)
 
             // Add event listener to the map to allow users to drop a pin and update the forecast
             map.on('click', function (event) {
-                // marker = new mapboxgl.Marker()
-                //     .setLngLat(event.lngLat)
-                //     .addTo(map);
-                // console.log(event.lngLat);
+
 
                 //Remove previous marker if there is one
                 if (marker) {
@@ -151,18 +129,6 @@
                 marker = new mapboxgl.Marker()
                     .setLngLat(event.lngLat)
                     .addTo(map);
-                // console.log(event.lngLat);
-                // map.on('click', function (event) {
-                //     // Remove previous marker if there is one
-                //     if (marker) {
-                //         marker.remove();
-                //     }
-                // })
-
-
-                // remove input boxes
-                // $('#user-city').remove();
-                // $('#submit').remove();
 
 
                 // reverse geocode to get the city name
@@ -174,7 +140,7 @@
                     console.log(city);
                     $('#location').text(city);
 
-                    // // get weather data based on new coordinates
+                    // get weather data based on new coordinates
                     let lat = event.lngLat.lat;
                     let lon = event.lngLat.lng;
 
@@ -185,8 +151,7 @@
                         units: "imperial"
                     }).done(function (weatherForecast) {
                         console.log(weatherForecast);
-                        //
-                        //     // update the forecast for the next 5 days
+                            // update the forecast for the next 5 days
                         document.querySelector("#day1-max").innerHTML = weatherForecast.list[0].main.temp_max;
                         document.querySelector("#day2-max").innerHTML = weatherForecast.list[8].main.temp_max;
                         document.querySelector("#day3-max").innerHTML = weatherForecast.list[16].main.temp_max;
