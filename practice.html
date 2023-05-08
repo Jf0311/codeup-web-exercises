@@ -23,35 +23,111 @@ CSS Practice
 // round the edges to all buttons and give them a solid red border
 -->
 
-<h1 style= "color: green"> HelloCerberus </h1>
+<!--<h1 style= "color: green"> HelloCerberus </h1>-->
 
-<p style="border: blue dotted"> ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto assumenda commodi, consequatur distinctio enim esse fugiat mollitia nobis obcaecati odio quis quisquam sed unde.</p>
+<!--<p style="border: blue dotted"> ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto assumenda commodi, consequatur distinctio enim esse fugiat mollitia nobis obcaecati odio quis quisquam sed unde.</p>-->
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus error expedita facere ipsam itaque numquam obcaecati quisquam temporibus? Blanditiis dolorem incidunt quos tempore voluptatum.</p>
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus error expedita facere ipsam itaque numquam obcaecati quisquam temporibus? Blanditiis dolorem incidunt quos tempore voluptatum.</p>-->
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus error expedita facere ipsam itaque numquam obcaecati quisquam temporibus? Blanditiis dolorem incidunt quos tempore voluptatum.</p>
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus error expedita facere ipsam itaque numquam obcaecati quisquam temporibus? Blanditiis dolorem incidunt quos tempore voluptatum.</p>-->
 
-<h4>grocery list</h4>
-<ul class="list-font-size">
-  <li>apples</li>
-  <li style="background-color: yellow">bananas</li>
-  <li>celery</li>
-</ul>
+<!--<h4>grocery list</h4>-->
+<!--<ul class="list-font-size">-->
+<!--  <li>apples</li>-->
+<!--  <li style="background-color: yellow">bananas</li>-->
+<!--  <li>celery</li>-->
+<!--</ul>-->
 
-<button style="font-size: 24px; border-color:red"Click here!</button>
+<!--<button style="font-size: 24px; border-color:red"Click here!</button>-->
 
-<form style="background-color: black; color: white">
-  <h4 style="color: red"> Up Now!</h4>
-  <label for="username">Username</label>
-  <input id="username" name="username" type="text" >
-  <br>
+<!--<form style="background-color: black; color: white">-->
+<!--  <h4 style="color: red"> Up Now!</h4>-->
+<!--  <label for="username">Username</label>-->
+<!--  <input id="username" name="username" type="text" >-->
+<!--  <br>-->
 
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password">
-  <br>
+<!--  <label for="password">Password</label>-->
+<!--  <input id="password" name="password" type="password">-->
+<!--  <br>-->
 
-  <input type="submit">
-</form>
+<!--  <input type="submit">-->
+<!--</form>-->
+
+
+<script> const users = [
+  {
+    id: 1,
+    name: 'ryan',
+    email: 'ryan@codeup.com',
+    languages: ['clojure', 'javascript'],
+    yearsOfExperience: 5
+  },
+  {
+    id: 2,
+    name: 'luis',
+    email: 'luis@codeup.com',
+    languages: ['java', 'scala', 'php'],
+    yearsOfExperience: 6
+  },
+  {
+    id: 3,
+    name: 'zach',
+    email: 'zach@codeup.com',
+    languages: ['javascript', 'bash'],
+    yearsOfExperience: 7
+  },
+  {
+    id: 4,
+    name: 'fernando',
+    email: 'fernando@codeup.com',
+    languages: ['java', 'php', 'sql'],
+    yearsOfExperience: 8
+  },
+  {
+    id: 5,
+    name: 'justin',
+    email: 'justin@codeup.com',
+    languages: ['html', 'css', 'javascript', 'php'],
+    yearsOfExperience: 9
+  }
+];
+
+
+
+
+
+
+
+
+const threeLanguages = users.filter(function (x){
+  return   x.languages.length  >= 3
+});
+console.log(threeLanguages); //  get the three languages , first part is a parameter , then the languague inside the user , theh the length because of an array . length because it an array
+
+const Emails = users.map(function (x){
+  return   x.email
+
+});
+console.log(Emails)
+
+
+const yearsOnDaJob = users.reduce(function (total,person){
+  return total + person.yearsOfExperience
+},0)
+console.log(yearsOnDaJob)
+
+let averageExp = yearsOnDaJob/users.length
+
+
+let longestEmail = users.reduce(function(longEmail, person){
+  if (person.email.length > longEmail.length){
+    longEmail = person.email;
+  }
+  console.log(longEmail)
+  return longEmail
+},"")
+console(longestEmail);
+</script>
 
 </body>
 </html>
